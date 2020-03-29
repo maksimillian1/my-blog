@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
-import Posts from '../components/Posts';
 import { useDispatch, useSelector } from 'react-redux';
-import './PostPage.css';
 import { fetchPosts } from '../actions/fetchPosts';
+import Posts from '../components/Posts';
+import './PostPage.css';
+
 
 export const PostsPage = () => {
     const dispatch = useDispatch();
@@ -14,7 +15,7 @@ export const PostsPage = () => {
     }, [dispatch]);
 
     return (
-        <div className='content'>
+        <div className='content mt-3'>
             <Posts posts={posts}/>
         </div>
     );

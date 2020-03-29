@@ -3,17 +3,10 @@ import Post from './Post';
 import { connect } from 'react-redux';
 
 const Posts = (props) => {
-    const keys = Object.keys(localStorage);
-
-    console.log(props.posts);
-    const getPost = key => localStorage.getItem(key);
-    const parsePost = post => JSON.parse(post);
-
-    return keys.map(key => <Post key={key} post={parsePost(getPost(key))}/>);
+    return props.posts.map(post => <Post key={post.id} post={post}/>);
 }
 
 const mapStateToProps = state => {
-    console.log(state.posts.posts);
     return {
         posts: state.posts.posts
     };

@@ -9,11 +9,14 @@ import { PostFormPage } from './pages/PostFormPage';
 import { PostsPage } from './pages/PostsPage';
 import { NavBar } from './components/NavBar';
 import { rootReducer } from './reducers/rootReducer';
+import PostPage from './pages/PostPage';
+
+
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
   rootReducer,
-  compose(applyMiddleware(thunk)),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  composeEnhancer(applyMiddleware(thunk)),
 );
 
 function App() {
@@ -30,6 +33,9 @@ function App() {
             </Route>
             <Route path='/form' exact>
               <PostFormPage />
+            </Route>
+            <Route path='/post/:id'>
+              <PostPage />
             </Route>
             <Redirect to="/" />    
           </Switch>
