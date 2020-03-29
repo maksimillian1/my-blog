@@ -1,0 +1,9 @@
+.content {
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+    max-width: 80%;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
