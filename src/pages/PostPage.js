@@ -3,11 +3,8 @@ import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 const PostPage = (props) => {
-
     const { id } = useParams();
-
-    const post = props.posts.filter(post => post.id = id)[0];
-    console.log(post);
+    const post = props.posts.filter(post => post.id.toString() === id)[0];
     return (
         <div>
             <h3>{post.title}</h3>
@@ -22,4 +19,4 @@ const mapStateToProps = state => {
     };
 }
 
-export default connect(mapStateToProps)(PostPage);
+export default connect(mapStateToProps, null)(PostPage);

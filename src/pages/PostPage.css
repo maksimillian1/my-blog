@@ -7,3 +7,16 @@
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5px auto; /* 15% from the top and centered */
+    border: 1px solid #888;
+    max-width: 60%; /* Could be more or less, depending on screen size */
+  }
+
+  .error-text {
+      float: right;
+      color: red;
+      font-size: 1rem;
+  }
