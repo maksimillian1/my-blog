@@ -9,8 +9,6 @@ export const PostFormPage = () => {
     const toggleModal = () => { setModal(!modalOpened) }
 
 
-    
-
     return (
         <div className="container mt-5">
             <button className="btn btn-primary" onClick={toggleModal}>Create Post</button>
